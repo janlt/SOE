@@ -1,0 +1,21 @@
+[Unit]
+Description=Soe server soemetadbsrv
+
+[Service]
+User=<USER>
+Type=simple
+UMask=0002
+#PIDFile=/var/run/soemetadbsrv.pid
+#ExecStartPre=/bin/rm -f /var/run/soemetadbsrv.pid
+ExecStart=/usr/bin/soemetadbsrv -u <USER>
+ExecReload=/bin/kill -HUP ${MAINPID}
+KillSignal=SIGTERM
+#Restart=always
+#Restart=on-abort
+#RestartSec=20
+LimitNOFILE=1000000
+LimitNPROC=1000000
+LimitSIGPENDING=1000000
+
+[Install]
+WantedBy=default.target
