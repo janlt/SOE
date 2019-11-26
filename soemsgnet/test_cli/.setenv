@@ -1,0 +1,3 @@
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:../../mempools/lib:../../msgs/lib:../../msgnet/lib:../../rcsdb/lib:../../rcsdbem/lib:../../soe_bind/lib:/usr/local/lib
+export DBSRV_MCAST_ADDR=225.1.0.54
+export DBSRV_MCAST_PORT=6122
