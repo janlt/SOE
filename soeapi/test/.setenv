@@ -1,0 +1,1 @@
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:../../mempools/lib:../../kvs/lib:../../rcsdb/lib:../../rcsdbem/lib:../../soe_api/lib:../../soe/lib:/usr/local/lib:../../metadbcli/lib:../../msgs/lib:../../msgnet/lib
