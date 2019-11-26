@@ -1,7 +1,3 @@
-<html><head><meta id="_moz_html_fragment"><title></title></head><body>
-/**
-\mainpage Soe C++ and C API Overview <br>
-
 <h1>soe</h1>
 <h2>C++ API Overview</h2>
 <p>
@@ -778,4 +774,3 @@ soe/soeapi/c_test</p>
   -p, --wait-for-key             Wait for key pressed (until compaction done)
   -h, --help                     Print this help</pre>
 
-*/</p></body></html>
