@@ -1,0 +1,12 @@
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soeapi/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soebind/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soelogger/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soemonitors/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soeutil/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soemsgnet/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soekvs/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soemempools/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soemetadbcli/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soemsgs/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soercsdb/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/soercsdbem/lib/
