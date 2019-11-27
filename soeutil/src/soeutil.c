@@ -36,8 +36,9 @@ static const char * jsoeErrorMsgs[] = {
 
 const char * jsoeStrError(JS_RET_SOE rc)
 {
-    if (rc < (sizeof(jsoeErrorMsgs) / sizeof(char *)))
+    if (rc < (sizeof(jsoeErrorMsgs) / sizeof(char *))) {
         return jsoeErrorMsgs[rc];
+    }
     return "Unrecognized error";
 }
 
@@ -58,8 +59,9 @@ void jsoeFree(JS_DAT_SOE * pJson, int jsoeData)
 
 static void * jsoeAlloc(JS_DAT_SOE * pJson, size_t zBytes)
 {
-    if (zBytes <= 0)
+    if (zBytes <= 0) {
         return NULL;
+    }
     zBytes = (zBytes + 7) & (~(size_t) 7);
     JS_BIN_SOE * pMem;
     for (pMem = pJson->bin_ptr; pMem; pMem = pMem->next) {
@@ -74,8 +76,9 @@ static void * jsoeAlloc(JS_DAT_SOE * pJson, size_t zBytes)
             zAlloc = 4096;
         }
         pMem = calloc(1, zAlloc);
-        if (!pMem)
+        if (!pMem) {
             return NULL;
+        }
         pMem->free_bytes = zAlloc - sizeof(JS_BIN_SOE);
         pMem->next = pJson->bin_ptr;
         pJson->bin_ptr = pMem;

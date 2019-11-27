@@ -148,91 +148,60 @@ struct JS_DAT_SOE {
 };
 typedef struct JS_DAT_SOE JS_DAT_SOE;
 
-extern size_t UTF8count(
-    const uint8_t * pabIn,
-    size_t          zInBytes);
-
-extern size_t UTF8copy(
-    const uint8_t * pabIn,
-    size_t          zInBytes,
-    uint8_t *       pabOut,
-    size_t          zOutBytes);
-
-
-extern const char * jsoeStrError(JS_RET_SOE);
-
-extern JS_DAT_SOE * jsoeGetJsonData(void);
-
-extern JS_RET_SOE jsoeParse(
-    JS_DAT_SOE * pJson,
-    const uint8_t * pabUnicode,
-    size_t zUnicodeSize);
-
-extern void jsoeFree(
-    JS_DAT_SOE * pJson,
-    int jsoeData);
-
-extern const JS_VAL_SOE * jsoeFindNamedValue(
-    const JS_VAL_SOE * pListValue,
-    const char * pacName,
-    size_t zNameLength);
-
-extern int jsoeGetDouble(
-    const JS_VAL_SOE * pValue,
-    double * pdValue);
-extern int jsoeGetS64(
-    const JS_VAL_SOE * pValue,
-    int64_t * piValue);
-extern int jsoeGetU64(
-    const JS_VAL_SOE * pValue,
-    uint64_t * puValue);
-
-extern int jsoeGetDecimal(
-    const JS_VAL_SOE * pValue,
-    int64_t * piValue);
-
-extern int jsoeGetValueNumber(const JS_VAL_SOE * jsoeValue);
-
-extern const JS_VAL_SOE *   jsoeGetTopValue(const JS_DAT_SOE * jsoeData);
-
-extern size_t               jsoeGetErrorPosition(const JS_DAT_SOE * pJson);
-
-extern int                  jsoeHasChildren(const JS_VAL_SOE * jsoeValue);
-
-extern int                  jsoeIsArray(const JS_VAL_SOE * jsoeValue);
-extern int                  jsoeIsList(const JS_VAL_SOE * jsoeValue);
-extern int                  jsoeIsString(const JS_VAL_SOE * jsoeValue);
-extern int                  jsoeIsNumber(const JS_VAL_SOE * jsoeValue);
-extern int                  jsoeIsTrue(const JS_VAL_SOE * jsoeValue);
-extern int                  jsoeIsFalse(const JS_VAL_SOE * jsoeValue);
-extern int                  jsoeIsNull(const JS_VAL_SOE * jsoeValue);
-extern JS_ECAP_SOE            jsoeGetNodeType(const JS_VAL_SOE * jsoeValue);
-
-extern const JS_ELEM_SOE *    jsoeGetFirstItem(const JS_VAL_SOE * jsoeValue);
-extern const JS_ELEM_SOE *    jsoeGetNextItem(const JS_ELEM_SOE * jsoeItem);
-extern const JS_VAL_SOE *   jsoeGetItemValue(const JS_ELEM_SOE * jsoeItem);
-
-extern const JS_DUPLE_SOE *    jsoeGetFirstPair(const JS_VAL_SOE * jsoeValue);
-extern const JS_DUPLE_SOE *    jsoeGetNextPair(const JS_DUPLE_SOE * jsoePair);
-extern const JS_VAL_SOE *   jsoeGetPairValue(const JS_DUPLE_SOE * jsoePair);
-extern void *               jsoeGetPairNameUTF8(const JS_DUPLE_SOE * jsoePair,
-                                                void * pszOut,
-                                                size_t zOutBytes);
-extern const void *         jsoeGetPairNamePtrUTF8(const JS_DUPLE_SOE * jsoePair);
-extern size_t               jsoeGetPairNameLenUTF8(const JS_DUPLE_SOE * jsoePair);
-
-extern void *               jsoeGetValueStringUTF8(const JS_VAL_SOE * jsoeValue,
-                                                   void * pszOut,
-                                                   size_t zOutBytes);
-extern char *               jsoeGetValueStringISO88591(const JS_VAL_SOE * jsoeValue,
-                                                       char * pszOut,
-                                                       size_t zOutBytes);
-extern uint8_t *            jsoeGetValueStringIBM1047(const JS_VAL_SOE * jsoeValue,
-                                                      uint8_t * pszOut,
-                                                      size_t zOutBytes,
-                                                      size_t *pCopiedBytes);
-extern size_t               jsoeGetValueStringLenUTF8(const JS_VAL_SOE * jsoeValue);
-extern size_t               jsoeGetValueStringLenChars(const JS_VAL_SOE * jsoeValue);
+extern size_t UTF8count(const uint8_t * pabIn,
+        size_t zInBytes);
+extern size_t UTF8copy(const uint8_t * pabIn,
+        size_t zInBytes,
+        uint8_t *pabOut,
+        size_t zOutBytes);
+extern const char *jsoeStrError(JS_RET_SOE);
+extern JS_DAT_SOE *jsoeGetJsonData(void);
+extern JS_RET_SOE jsoeParse(JS_DAT_SOE * pJson,
+        const uint8_t *pabUnicode,
+        size_t zUnicodeSize);
+extern void jsoeFree(JS_DAT_SOE *pJson, int jsoeData);
+extern const JS_VAL_SOE *jsoeFindNamedValue(const JS_VAL_SOE *pListValue,
+        const char *pacName,
+        size_t zNameLength);
+extern int jsoeGetDouble(const JS_VAL_SOE *pValue, double *pdValue);
+extern int jsoeGetS64(const JS_VAL_SOE *pValue, int64_t *piValue);
+extern int jsoeGetU64(const JS_VAL_SOE *pValue, uint64_t *puValue);
+extern int jsoeGetDecimal(const JS_VAL_SOE *pValue, int64_t *piValue);
+extern int jsoeGetValueNumber(const JS_VAL_SOE *jsoeValue);
+extern const JS_VAL_SOE *jsoeGetTopValue(const JS_DAT_SOE *jsoeData);
+extern size_t jsoeGetErrorPosition(const JS_DAT_SOE *pJson);
+extern int jsoeHasChildren(const JS_VAL_SOE *jsoeValue);
+extern int jsoeIsArray(const JS_VAL_SOE *jsoeValue);
+extern int jsoeIsList(const JS_VAL_SOE *jsoeValue);
+extern int jsoeIsString(const JS_VAL_SOE *jsoeValue);
+extern int jsoeIsNumber(const JS_VAL_SOE *jsoeValue);
+extern int jsoeIsTrue(const JS_VAL_SOE *jsoeValue);
+extern int jsoeIsFalse(const JS_VAL_SOE *jsoeValue);
+extern int jsoeIsNull(const JS_VAL_SOE *jsoeValue);
+extern JS_ECAP_SOE jsoeGetNodeType(const JS_VAL_SOE *jsoeValue);
+extern const JS_ELEM_SOE *jsoeGetFirstItem(const JS_VAL_SOE *jsoeValue);
+extern const JS_ELEM_SOE *jsoeGetNextItem(const JS_ELEM_SOE *jsoeItem);
+extern const JS_VAL_SOE *jsoeGetItemValue(const JS_ELEM_SOE *jsoeItem);
+extern const JS_DUPLE_SOE *jsoeGetFirstPair(const JS_VAL_SOE *jsoeValue);
+extern const JS_DUPLE_SOE *jsoeGetNextPair(const JS_DUPLE_SOE *jsoePair);
+extern const JS_VAL_SOE *jsoeGetPairValue(const JS_DUPLE_SOE *jsoePair);
+extern void *jsoeGetPairNameUTF8(const JS_DUPLE_SOE *jsoePair,
+        void *pszOut,
+        size_t zOutBytes);
+extern const void *jsoeGetPairNamePtrUTF8(const JS_DUPLE_SOE *jsoePair);
+extern size_t jsoeGetPairNameLenUTF8(const JS_DUPLE_SOE * jsoePair);
+extern void *jsoeGetValueStringUTF8(const JS_VAL_SOE *jsoeValue,
+        void * pszOut,
+        size_t zOutBytes);
+extern char *jsoeGetValueStringISO88591(const JS_VAL_SOE *jsoeValue,
+        char *pszOut,
+        size_t zOutBytes);
+extern uint8_t *jsoeGetValueStringIBM1047(const JS_VAL_SOE *jsoeValue,
+        uint8_t *pszOut,
+        size_t zOutBytes,
+        size_t *pCopiedBytes);
+extern size_t jsoeGetValueStringLenUTF8(const JS_VAL_SOE *jsoeValue);
+extern size_t jsoeGetValueStringLenChars(const JS_VAL_SOE *jsoeValue);
 
 #endif
 
