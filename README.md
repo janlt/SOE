@@ -12,22 +12,22 @@ distributed umbrella with a unified set of APIs.</p>
 <p>
 <h1>Building and installing</h1>
 <p>
-<p>The prerequisites for Fedora 28+ before building SOE are the following.
-   boost* 1.66+
-   json-c 0.13+
-   json-glib 1.4+
-   jsoncpp 1.8+
+<p>The prerequisites for Fedora 28+ before building SOE are the following.</p>
+<p>   boost* 1.66+</p>
+<p>   json-c 0.13+</p>
+<p>   json-glib 1.4+</p>
+<p>   jsoncpp 1.8+</p>
    
-   make
-   make install
+<p>   make</p>
+<p>   make install</p>
    
-   ultimately the install step can be skipped and the environment can be set up instead:
-   . envinit.sh
+<p>  ultimately the install step can be skipped and the environment can be set up instead:</p>
+<p>  . envinit.sh</p>
    
-   SOE server can be installed as a service using soemetadbsrv/files/usr/lib/systemd/system/soemetadbsrv.service
-   as a template.
+<p>  SOE server can be installed as a service using soemetadbsrv/files/usr/lib/systemd/system/soemetadbsrv.service
+   as a template.</p>
    
-   Steps to run some tests:
+<p>   Steps to run some tests:</p>
    
      Start up soemetadbsrv from the build folder:
      
@@ -57,7 +57,7 @@ distributed umbrella with a unified set of APIs.</p>
      soeapi/c_test/bin/soe_test -x <YOUR_USER_NAME> -o GG -z GG -c YY -E -k "" -e "" -m 2</p>
 <p></p>
 <p>
-Asynchronous APIs
+<h3>Asynchronous APIs</h3>
 
 Asynchronous APIs rely on C++ Future class libraries compring a class hierarchy.
 Soe futures can be created and destroyed only using session API. Sessions provide context
