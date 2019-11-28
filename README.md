@@ -1,4 +1,4 @@
-<h1>soe</h1>
+<h1>SOE</h1>
 <h2>C++ API Overview</h2>
 <p>
 <p>Soe is a distributed and persistent key-value store. Soe is
