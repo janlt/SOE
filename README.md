@@ -19,7 +19,7 @@ distributed umbrella with a unified set of APIs.</p>
      json-glib 1.4+
      jsoncpp 1.8+
    
-<p> Then build it/p>
+<p> Then build it</p>
    
      make
      make install
