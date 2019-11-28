@@ -26,6 +26,7 @@ clean:
 	rm README.all
 
 install:
-	[ ! -z /var/KVS_cluster ] && mkdir /var/KVS_cluster && chmod 777 /var/KVS_cluster	
-	[ ! -z /var/RCSDB_cluster ] && mkdir /var/RCSDB_cluster && chmod 777 /var/RCSDB_cluster	
-	cp metadbsrv/bin/soemetadbsrv /usr/bin
+	if [ ! -d /var/KVS_cluster ]; then mkdir /var/KVS_cluster; chmod 777 /var/KVS_cluster; else echo "/var/KVS_cluster already exists..."; fi
+	if [ ! -d /var/RCSDB_cluster ]; then mkdir /var/RCSDB_cluster; chmod 777 /var/RCSDB_cluster; else echo "/var/RCSDB_cluster already exists...";  fi
+	cp soemetadbsrv/bin/soemetadbsrv /usr/bin
+	cp `find . -name "libsoe*.so" -print` /usr/lib64
