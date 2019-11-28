@@ -28,14 +28,17 @@ distributed umbrella with a unified set of APIs.</p>
    as a template.
    
    Steps to run some tests:
+   
      Start up soemetadbsrv from the build folder:
      
      soemetadbsrv/bin/soemetadbsrv -u <YOUR_USER_NAME>
      or
      sudo soemetadbsrv/bin/soemetadbsrv -u <ANOTHER_USER_NAME>
        
-   Create a store (database) using soe_test utility.
+     Create a store (database) using soe_test utility.
+   
      From the build folder run:
+     
      soeapi/c_test/bin/soe_test -x <YOUR_USER_NAME> -o <CLUSTER> -z <SPACE> -c <STORE> -A -m 2
        
      then insert a bunch of records in it:
