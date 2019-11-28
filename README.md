@@ -1,4 +1,4 @@
-<h1>soe</h1>
+<h1>SOE</h1>
 <h2>C++ API Overview</h2>
 <p>
 <p>Soe is a distributed and persistent key-value store. Soe is
@@ -12,30 +12,37 @@ distributed umbrella with a unified set of APIs.</p>
 <p>
 <h1>Building and installing</h1>
 <p>
-<p>The prerequisites for Fedora 28+ before building SOE are the following.
-   boost* 1.66+
-   json-c 0.13+
-   json-glib 1.4+
-   jsoncpp 1.8+
+<p>The prerequisites for Fedora 28+ before building SOE are the following.</p>
+
+     boost* 1.66+
+     json-c 0.13+
+     json-glib 1.4+
+     jsoncpp 1.8+
    
-   make
-   make install
+<p> Then build it/p>
    
-   ultimately the install step can be skipped and the environment can be set up instead:
-   . envinit.sh
+     make
+     make install
    
-   SOE server can be installed as a service using soemetadbsrv/files/usr/lib/systemd/system/soemetadbsrv.service
-   as a template.
+<p>  ultimately the install step can be skipped and the environment can be set up instead:</p>
+
+     . envinit.sh
    
-   Steps to run some tests:
+<p>  SOE server can be installed as a service using soemetadbsrv/files/usr/lib/systemd/system/soemetadbsrv.service
+   as a template.</p>
+   
+<p>   Steps to run some tests:</p>
+   
      Start up soemetadbsrv from the build folder:
      
      soemetadbsrv/bin/soemetadbsrv -u <YOUR_USER_NAME>
      or
      sudo soemetadbsrv/bin/soemetadbsrv -u <ANOTHER_USER_NAME>
        
-   Create a store (database) using soe_test utility.
+     Create a store (database) using soe_test utility.
+   
      From the build folder run:
+     
      soeapi/c_test/bin/soe_test -x <YOUR_USER_NAME> -o <CLUSTER> -z <SPACE> -c <STORE> -A -m 2
        
      then insert a bunch of records in it:
@@ -54,7 +61,7 @@ distributed umbrella with a unified set of APIs.</p>
      soeapi/c_test/bin/soe_test -x <YOUR_USER_NAME> -o GG -z GG -c YY -E -k "" -e "" -m 2</p>
 <p></p>
 <p>
-Asynchronous APIs
+<h3>Asynchronous APIs</h3>
 
 Asynchronous APIs rely on C++ Future class libraries compring a class hierarchy.
 Soe futures can be created and destroyed only using session API. Sessions provide context
