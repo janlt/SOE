@@ -9,6 +9,51 @@ heterogeneous KV stores, RDBMs, memory-only databases, etc., under a
 distributed umbrella with a unified set of APIs.</p>
 <p></p>
 <p>
+<p>
+<h1>Building and installing</h1>
+<p>
+<p>The prerequisites for Fedora 28+ before building SOE are the following.
+   boost* 1.66+
+   json-c 0.13+
+   json-glib 1.4+
+   jsoncpp 1.8+
+   
+   make
+   make install
+   
+   ultimately the install step can be skipped and the environment can be set up instead:
+   . envinit.sh
+   
+   SOE server can be installed as a service using soemetadbsrv/files/usr/lib/systemd/system/soemetadbsrv.service
+   as a template.
+   
+   Steps to run some tests:
+     Start up soemetadbsrv from the build folder:
+     
+     soemetadbsrv/bin/soemetadbsrv -u <YOUR_USER_NAME>
+     or
+     sudo soemetadbsrv/bin/soemetadbsrv -u <ANOTHER_USER_NAME>
+       
+   Create a store (database) using soe_test utility.
+     From the build folder run:
+     soeapi/c_test/bin/soe_test -x <YOUR_USER_NAME> -o <CLUSTER> -z <SPACE> -c <STORE> -A -m 2
+       
+     then insert a bunch of records in it:
+     soeapi/c_test/bin/soe_test -x <YOUR_USER_NAME> -o <CLUSTER> -z <SPACE> -c <STORE> -C -n 100 -N 1000 -k "MY_KEY_" -m 2
+       
+     finally query it:
+     soeapi/c_test/bin/soe_test -x <YOUR_USER_NAME> -o <CLUSTER> -z <SPACE> -c <STORE> -E -k "" -e "" -m 2
+     
+     The integrity_check utility can be used to exercise some asynchronous APIs:
+     
+     soeapi/soeintegrity_test/bin/soe_integrity_test -x <YOUR_USER_NAME> -o GG -z GG -c YY -X 8 -n 100 -m 2
+     
+     The above command inserted 100 records with predefined key in one vector async call. The results can be 
+     verified using soe_test:
+     
+     soeapi/c_test/bin/soe_test -x <YOUR_USER_NAME> -o GG -z GG -c YY -E -k "" -e "" -m 2</p>
+<p></p>
+<p>
 Asynchronous APIs
 
 Asynchronous APIs rely on C++ Future class libraries compring a class hierarchy.
