@@ -13,12 +13,12 @@ distributed umbrella with a unified set of APIs.</p>
 <h1>Building and installing</h1>
 <p>
 <p>The prerequisites for Fedora 28+ before building SOE are the following.</p>
-   boost* 1.66+
+   boost* 1.66+</p>
    json-c 0.13+</p>
    json-glib 1.4+</p>
    jsoncpp 1.8+</p>
    
-<p>   make
+<p>   make</p>
    make install</p>
    
 <p>  ultimately the install step can be skipped and the environment can be set up instead:</p>
