@@ -18,6 +18,7 @@ distributed umbrella with a unified set of APIs.</p>
      json-c 0.13+
      json-glib 1.4+
      jsoncpp 1.8+
+     rocksdb 5.7+
    
 <p> Then build it</p>
    
