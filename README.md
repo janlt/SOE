@@ -64,7 +64,7 @@ distributed umbrella with a unified set of APIs.</p>
 <p>
 <h3>Asynchronous APIs</h3>
 
-Asynchronous APIs rely on C++ Future class libraries compring a class hierarchy.
+Asynchronous APIs rely on C++ Future/Promise class libraries comprising a class hierarchy.
 Soe futures can be created and destroyed only using session API. Sessions provide context
 for future's invocation and handling. Future's constructors and destructors are protected
 thus preventing users from creating futures outside of sessions.
