@@ -6,7 +6,6 @@ INC_DIR := include
 LIB_DIR := lib
 BIN_DIR := bin
 OPT_INC := -I/usr/include
-OPT_INC += -I/opt/lzlabs/include
 
 DEPS_INC_LIST := $(foreach word,$(DEPS_INC),-I../$(word)/$(INC_DIR))
 DEPS_INC_LIST += $(foreach word,$(DEPS_INC),-I../../$(word)/$(INC_DIR))
